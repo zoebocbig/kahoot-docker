@@ -6,3 +6,5 @@ node_modules
 .vscode
 .vs
 .Dockerfile
+__pycache__
+*.pyc
