@@ -20,15 +20,6 @@ def kahoot():
         "message": "Backend Kahoot opérationnel"
     })
 
-@app.route("/api/login", methods=["POST"])
-def login():
-    data = request.json
-    code = data.get("code")
-
-    if code == "1234":
-        return jsonify({"success": True})
-    else:
-        return jsonify({"success": False})
 
 @app.route("/api/questions")
 def questions():
