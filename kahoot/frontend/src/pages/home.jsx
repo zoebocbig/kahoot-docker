@@ -5,17 +5,35 @@ function Home() {
   const [code, setCode] = useState("");
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    if (code.trim() === "") {
-      alert("Entre un code de quiz");
-      return;
-    }
+  if (code.trim() === "") {
+    alert("Entre un code de quiz");
+    return;
+  }
 
-    console.log("Code du quiz :", code);
+  fetch("http://localhost:5000/api/login", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      code: code,
+    }),
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      if (data.success) {
+        alert("Quiz trouvé ✅");
+      } else {
+        alert("Code invalide ❌");
+      }
+    })
+    .catch(() => {
+      alert("Erreur serveur");
+    });
+};
 
-   
-  };
 
   return (
     <div className="home-container">
