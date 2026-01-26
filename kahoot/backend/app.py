@@ -12,14 +12,9 @@ init_db()
 
 API_KEY = os.getenv("API_KEY")
 
-@app.route("/api/test")
-def test():
-    return jsonify({
-        "message": "Backend OK",
-        "api_key_loaded": API_KEY is not None
-    })
 
-@app.route("/api/kahoot")
+
+@app.route("/api/home")
 def kahoot():
     url = "https://api.exemple.com/data"
     headers = {
