@@ -24,9 +24,9 @@ function Home() {
     .then((res) => res.json())
     .then((data) => {
       if (data.success) {
-        alert("Quiz trouvé ✅");
+        alert("Quiz trouvé ");
       } else {
-        alert("Code invalide ❌");
+        alert("Code invalide ");
       }
     })
     .catch(() => {
@@ -37,7 +37,7 @@ function Home() {
 
   return (
     <div className="home-container">
-      <h1 className="title">🎮 Kahoot Clone</h1>
+      <h1 className="title"> Kahoot Clone</h1>
 
       <form className="join-form" onSubmit={handleSubmit}>
         <input
