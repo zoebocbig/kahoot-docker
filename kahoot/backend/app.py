@@ -16,13 +16,9 @@ API_KEY = os.getenv("API_KEY")
 
 @app.route("/api/home")
 def kahoot():
-    url = "https://api.exemple.com/data"
-    headers = {
-        "Authorization": f"Bearer {API_KEY}"
-    }
-
-    response = requests.get(url, headers=headers)
-    return response.json()
+   return jsonify({
+        "message": "Backend Kahoot opérationnel"
+    })
 
 @app.route("/api/questions")
 def questions():
